@@ -1,3 +1,5 @@
+open DuckTypes
+
 (*
 1. Keywords must be read before identifier
 *)
