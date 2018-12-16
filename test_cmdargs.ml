@@ -5,6 +5,7 @@ let std_out = stdout;;
 open Unix
 open Scanf
 
+let duck = "🦆";
 
 let rec loading arr = match arr with
 	[] -> ()

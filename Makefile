@@ -14,4 +14,5 @@ duckTypes.cmx: duckTypes.ml
 	ocamlopt -o duckTypes str.cmxa duckTypes.ml
 
 clean:
-	rm -f *.cmx *.cmi compiler duckTypes lexer parser interpreter
+	rm -f *.o *.cmx *.cmi compiler duckTypes lexer parser interpreter
+	rm -f test_cmdargs
