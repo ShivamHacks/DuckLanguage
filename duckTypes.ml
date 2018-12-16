@@ -42,7 +42,7 @@ type token =
 	| EOF
 
 type data_type =
-	| Int_Type
+	| Float_Type
 	| Bool_Type
 	| String_Type
 
