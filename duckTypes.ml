@@ -55,7 +55,7 @@ type expr =
 	(* Identifiers *)
   	| ID of string
   	(* Values *)
-  	| Int of int
+  	| Float of float
   	| Bool of bool
   	| String of string
   	(* Binary Ops *)
