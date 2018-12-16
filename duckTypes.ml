@@ -83,6 +83,6 @@ type stmt =
   | While of expr * stmt
   | Print of expr
 
-type environment = (string * value) list
+type environment = (string * data_value) list
 (* Errors : TBD *)
 exception InvalidInputException of string

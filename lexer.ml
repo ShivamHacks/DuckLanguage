@@ -30,7 +30,6 @@ let re = [ (* Regular expressions and the tokens they generate. *)
   (R.regexp_string("float"), fun _ -> [Tok_Float_Type]) ;
   (R.regexp_string("bool"), fun _ -> [Tok_Bool_Type]) ;
   (R.regexp_string("quack"), fun _ -> [Tok_Print]) ;
-  (R.regexp_string("main"), fun _ -> [Tok_Main]) ;
   (R.regexp_string("if"), fun _ -> [Tok_If]) ;
   (R.regexp_string("else"), fun _ -> [Tok_Else]) ;
   (R.regexp_string("while"), fun _ -> [Tok_While]) ;
