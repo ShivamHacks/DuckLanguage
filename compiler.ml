@@ -18,7 +18,7 @@ let () =
 		let tokens = tokenize !lines in
 		let tokens_string = Utils.tokens_to_string tokens in
 		printf "Tokens: %s\n" tokens_string;
-		let (toks, parsed) = parse_arrayExpr tokens in 
+		let parsed = parse_Expr tokens in 
 		let parsed_string = Utils.expr_to_string parsed in
 		printf "Parsed: %s\n" parsed_string
 	else printf "No file provided!\n"
