@@ -3,26 +3,24 @@ open Lexer
 open Parser
 open Interpreter
 open Printf
-
-(* just for testing *)
-
-(* Print tokens in input string *)
+open Scanf
 
 let () =
 	if (Array.length Sys.argv) > 1 then
-		let tokens = tokenize Sys.argv.(1) in
+		(* Read the file *)
+		let lines = ref "" in
+		let read_file filename =
+			let ch = open_in filename in
+			try while true do lines := !lines ^ (input_line ch) done
+			with End_of_file -> close_in ch
+		in read_file Sys.argv.(1);
+		(* Process the file *)
+		let tokens = tokenize !lines in
 		let tokens_string = Utils.tokens_to_string tokens in
-		printf "Tokens: %s\n" tokens_string
-	else printf "No input string provided!\n"
+		printf "Tokens: %s\n" tokens_string;
+		let (toks, parsed) = parse_arrayExpr tokens in 
+		let parsed_string = Utils.expr_to_string parsed in
+		printf "Parsed: %s\n" parsed_string
+	else printf "No file provided!\n"
 ;;
 
-(*
-let () =
-	if (Array.length Sys.argv) > 1 then
-		printf "Given input: %s\n" Sys.argv.(1);
-		let tokens = tokenize Sys.argv.(1) in
-		let tokens_string = tokens_to_string tokens in
-		(printf "%s\n" tokens_string)
-	else (printf "No input string provided!\n")
-;;
-*)
